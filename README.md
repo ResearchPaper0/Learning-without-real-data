@@ -1,5 +1,9 @@
 # Learning without real data, a 3D simulated data learning approach applied for robust ID cards text extraction. (ECML PKDD 2022)
 
+This is a Python implementation of the following paper: Learning without real data, a 3D simulated data learning approach applied for robust ID cards text extraction.
+We are sharing a reusable public dataset of realistic synthetic French identity cards fully annotated in terms of textual content as well as information
+position allowing other researchers to train their own models. We are also sharing the 8 models we trained.
+
 ## Usage
 
 You can download the different models by clicking on the links:
