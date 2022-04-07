@@ -9,7 +9,7 @@ position allowing other researchers to train their own models. We are also shari
 You can download the differents datasets by clicking on the links:
 
 * 5000 random Identity Cards generated on Blender : https://www.mediafire.com/file/8n6gg4uaics1ms9/5K_EVAL_QUANTITATIVE.zip/file
-* 3000 Identity Cards generated on Blender using the Active Learning Uncertainty Sampling method : 
+* 3000 Identity Cards generated on Blender using the Active Learning Uncertainty Sampling method : https://www.mediafire.com/file/72qe1a5fd54zl1b/AL_3K.zip/file
 
 ## Models
 
