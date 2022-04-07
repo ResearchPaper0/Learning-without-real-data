@@ -4,7 +4,14 @@ This is a Python implementation of the following paper: Learning without real da
 We are sharing a reusable public dataset of realistic synthetic French identity cards fully annotated in terms of textual content as well as information
 position allowing other researchers to train their own models. We are also sharing the 8 models we trained.
 
-## Usage
+## Datasets
+
+You can download the differents datasets by clicking on the links:
+
+* 5000 random Identity Cards generated on Blender : https://www.mediafire.com/file/8n6gg4uaics1ms9/5K_EVAL_QUANTITATIVE.zip/file
+* 3000 Identity Cards generated on Blender using the Active Learning Uncertainty Sampling method : 
+
+## Models
 
 You can download the different models by clicking on the links:
 
