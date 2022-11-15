@@ -123,7 +123,57 @@ class EBUnet(nn.Module):
         x = self.head(x)
         return x
 
+class Unet(nn.Module):
+    """
+    UNet model
+    """
 
+    def __init__(self):
+        """Initialize the UNet model
+        """
+        super(Unet, self).__init__()
+        inp = [3, 32, 128]
+        inter = [16, 64, 256]
+        out = [32, 128, 512]
+        # down blocks
+        self.down_1 = DownBlock(input=inp[0], inter=inter[0], output=out[0])
+        self.down_2 = DownBlock(input=inp[1], inter=inter[1], output=out[1])
+        self.down_3 = DownBlock(input=inp[2], inter=inter[2], output=out[2])
+
+        # up bocks
+        self.up_2 = UpBlock(input=out[2] + out[1], inter=inter[2], output=out[1])
+        self.up_1 = UpBlock(input=out[1] + out[0], inter=inter[1], output=out[0])
+
+        # head
+        self.head = HeadBlock(input=out[0], inter=inter[0], output=2)
+
+    def forward(self, x, train=False):
+        """Forward pass of the UNet model
+
+        Parameters
+        ----------
+        x: torch.Tensor
+            input tensor to pass forward
+
+        Returns
+        -------
+        torch.Tensor
+            Resulting output tensor
+        """
+        # down block with skip connection retention
+        x = self.down_1(x)
+        skip_1 = x
+        x = self.down_2(x)
+        skip_2 = x
+        x = self.down_3(x)
+
+        # up block with skip concatenation
+        x = self.up_2(x, skip=skip_2)
+        x = self.up_1(x, skip=skip_1)
+
+        # head
+        x = self.head(x)
+        return x
 
 if __name__ == '__main__':
     # get the models and the GPU device if available
